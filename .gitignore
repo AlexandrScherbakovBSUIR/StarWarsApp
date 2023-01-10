@@ -1,0 +1,18 @@
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+
+# Default ignored files
+/shelf/
+
+# Project files
+# /src/main/resources/StarWarsPeopleApi.json
+# /src/main/resources/output/results.txt
