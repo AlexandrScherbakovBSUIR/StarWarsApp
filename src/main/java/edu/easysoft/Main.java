@@ -24,12 +24,6 @@ public class Main {
         FileProcessor.WritingStringToFile(str,fileName);
         System.out.println(str);
 
-/*        String path = new File("src/main/resources/conf.properties").getPath();
-        String pathAbs =
-                new File("results.txt").getAbsolutePath();
-        System.out.println(path);
-        System.out.println(pathAbs);*/
-
     }
 
 }
