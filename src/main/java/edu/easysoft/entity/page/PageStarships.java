@@ -1,14 +1,14 @@
 package edu.easysoft.entity.page;
 
-import edu.easysoft.entity.StarShip;
+import edu.easysoft.entity.Starship;
 
 import java.util.List;
 
-public class PageStarShips {
+public class PageStarships {
     private int count;
     private String next;
     private String previous;
-    private List<StarShip> results;
+    private List<Starship> results;
     @Override
     public String toString() {
         return "Page{" +
@@ -42,11 +42,11 @@ public class PageStarShips {
         this.previous = previous;
     }
 
-    public List<StarShip> getResults() {
+    public List<Starship> getResults() {
         return results;
     }
 
-    public void setResults(List<StarShip> results) {
+    public void setResults(List<Starship> results) {
         this.results = results;
     }
 

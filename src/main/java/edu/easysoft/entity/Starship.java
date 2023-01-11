@@ -1,6 +1,6 @@
 package edu.easysoft.entity;
 
-public class StarShip{
+public class Starship {
     private String MGLT;
     private String cargo_capacity;
     private String consumables;
