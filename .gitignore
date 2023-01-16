@@ -15,4 +15,4 @@ target/
 
 # Project files
 # /src/main/resources/StarWarsPeopleApi.json
-# /src/main/resources/output/results.txt
+/src/main/resources/output/results.txt
