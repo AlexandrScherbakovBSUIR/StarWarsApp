@@ -1,4 +1,21 @@
 AWSTemplateFormatVersion: 2010-09-09
+Description: CI/CD pipeline for github project
+
+Parameters:
+  GitHubOwner:
+    Type: String
+    AllowedPattern: "[A-Za-z0-9-]+"
+    default: AlexandrScherbakovBSUIR
+
+  GitHubRepository:
+    Type: String
+    AllowedPattern: "[A-Za-z0-9-]+"
+
+  GitHubBranch:
+    Type: String
+    AllowedPattern: "[A-Za-z0-9-]+"
+    default: master
+
 Resources:
   CodeBuildServiceRole:
     Type: 'AWS::IAM::Role'
@@ -54,7 +71,7 @@ Resources:
         - Arn
       Source:
         Type: GITHUB
-        Location: 'https://github.com/AlexandrScherbakovBSUIR/StarWarsApp.git'
+        Location: !Sub 'https://github.com/${GitHubOwner}/${GitHubRepository}.git'
         BuildSpec: buildspec.yml
         Auth:
           Type: OAUTH
@@ -65,9 +82,9 @@ Resources:
         Webhook: true
         FilterGroups:
           - - Type: EVENT
-              Pattern: 'PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED'
+              Pattern: 'PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED, PULL_REQUEST_REOPENED'
             - Type: BASE_REF
-              Pattern: !Sub ^refs/heads/master$
+              Pattern: !Sub ^refs/heads/${GitHubBranch}$
       Environment:
         Type: LINUX_CONTAINER
         ComputeType: BUILD_GENERAL1_SMALL
